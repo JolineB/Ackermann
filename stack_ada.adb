@@ -10,11 +10,29 @@
 
 with Ada.Text_IO; use Ada.Text_IO;
 with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+with Ada.Calendar; use Ada.Calendar;
 with stack; use stack;
 
 procedure stack_ada is
+type proc_access is access procedure(X:in out integer);
+start: Time;
+finish: Time;
+func_arg: integer:= Arg;
+r : integer;
+m : integer;
+n : integer;
 --
-procedure ackermann (m: in integer, n: in out integer) is
+function time_it(Action: Proc_Access; Arg: Integer) return Duration is
+start: Time := Clock;
+finish: Time;
+func_arg: integer:=Arg;
+begin
+    Action(func_arg);
+    finish := Clock;
+    return finish - start;
+end time_it;
+procedure ackermann (m: in integer; n: in out integer) is
+begin
 push(m);
 while not stack_is_empty() loop
     pop(m);
@@ -30,17 +48,15 @@ while not stack_is_empty() loop
     end if;
 end loop;
 end ackermann;
+ackermann_Access : Proc_Access := ackermann'access;
 --
 begin
-    r : integer;
-    m : integer;
-    n : integer;
     put_line("Enter m and n");
     get(m);
     get(n);
-    r = ackermann(m,n);
-    put_line("Result = ");
-    put(r);
-    new_line;
+    r := ackermann(m,n);
+    put_line("Result: " & r);
+    put_line(Duration'Image(time_it(ackermann_Access,m,n)) & "miliseconds");
 --need to put in the time tracker
 end stack_ada;
+
