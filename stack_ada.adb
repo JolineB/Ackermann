@@ -21,6 +21,7 @@ procedure stack_ada is
 r : integer;
 m : integer;
 n : integer;
+numStack : stack;
 --
 -- function time_it(Action: Proc_Access; Arg: Integer) return Duration is
 -- start: Time := Clock;
@@ -39,7 +40,7 @@ loop
     if(check) then
         exit;
     end if;
-    pop(m);
+    pop(&m);
     if m = 0 then
         n := n + 1;
     elsif n = 0 then
@@ -58,8 +59,9 @@ begin
     put_line("Enter m and n");
     get(m);
     get(n);
-    r := ackermann(m,n);
-    put_line("Result: " & r);
+    ackermann(m,n);
+    put_line("Result: ");
+    put_line(n);
     --put_line(Duration'Image(time_it(ackermann_Access,m,n)) & "miliseconds");
 --need to put in the time tracker
 end stack_ada;
