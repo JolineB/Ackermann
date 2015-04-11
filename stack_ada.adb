@@ -41,7 +41,7 @@ loop
     if(check) then
         exit;
     end if;
-    pop(op);
+    op = pop();
     if m = 0 then
         n := n + 1;
     elsif n = 0 then
@@ -62,7 +62,8 @@ begin
     get(n);
     ackermann(m,n);
     put_line("Result: ");
-    put_line(n);
+    put(n);
+    new_line;
     --put_line(Duration'Image(time_it(ackermann_Access,m,n)) & "miliseconds");
 --need to put in the time tracker
 end stack_ada;
