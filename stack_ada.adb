@@ -26,6 +26,7 @@ function time_it(Action: Proc_Access; Arg: Integer) return Duration is
 start: Time := Clock;
 finish: Time;
 func_arg: integer:=Arg;
+check: Boolean;
 begin
     Action(func_arg);
     finish := Clock;
@@ -34,7 +35,7 @@ end time_it;
 procedure ackermann (m: in integer; n: in out integer) is
 begin
 push(m);
-while (not stack_is_empty()) loop
+while (stack_is_empty() not .true.) loop
     pop(m);
     if m = 0 then
         n := n + 1;
