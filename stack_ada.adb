@@ -14,7 +14,7 @@ with Ada.Calendar; use Ada.Calendar;
 with stack; use stack;
 
 procedure stack_ada is
-type proc_access is access procedure(X:in out integer);
+type Proc_Access is access procedure(X:in out integer);
 start: Time;
 finish: Time;
 func_arg: integer:= Arg;
@@ -39,7 +39,7 @@ loop
     if(check) then
         exit;
     end if;
-    pop(m);
+    pop(&m);
     if m = 0 then
         n := n + 1;
     elsif n = 0 then
