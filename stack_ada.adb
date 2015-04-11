@@ -14,24 +14,24 @@ with Ada.Calendar; use Ada.Calendar;
 with stack; use stack;
 
 procedure stack_ada is
-type Proc_Access is access procedure(X:in out integer);
-start: Time;
-finish: Time;
-func_arg: integer:= Arg;
+-- type Proc_Access is access procedure(X:in out integer);
+-- start: Time;
+-- finish: Time;
+-- func_arg: integer:= Arg;
 r : integer;
 m : integer;
 n : integer;
 --
-function time_it(Action: Proc_Access; Arg: Integer) return Duration is
-start: Time := Clock;
-finish: Time;
-func_arg: integer:=Arg;
-begin
-    Action(func_arg);
-    finish := Clock;
-    return finish - start;
-end time_it;
-procedure ackermann (m: in integer; n: in out integer) is
+-- function time_it(Action: Proc_Access; Arg: Integer) return Duration is
+-- start: Time := Clock;
+-- finish: Time;
+-- func_arg: integer:=Arg;
+-- begin
+--     Action(func_arg);
+--     finish := Clock;
+--     return finish - start;
+-- end time_it;
+-- procedure ackermann (m: in integer; n: in out integer) is
 check: Boolean:= stack_is_empty;
 begin
 push(m);
