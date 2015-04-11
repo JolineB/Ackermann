@@ -21,7 +21,6 @@ procedure stack_ada is
 r : integer;
 m : integer;
 n : integer;
-numStack : stack;
 --
 -- function time_it(Action: Proc_Access; Arg: Integer) return Duration is
 -- start: Time := Clock;
@@ -42,7 +41,7 @@ loop
         exit;
     end if;
     op := m;
-    m := pop(op);
+    m := pop();
     if m = 0 then
         n := n + 1;
     elsif n = 0 then
