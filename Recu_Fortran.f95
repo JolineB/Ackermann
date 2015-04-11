@@ -1,5 +1,5 @@
-!Program to perform the Ackermann Function 
-!
+! Program to perform the Ackermann Function 
+! done by recursion
 program ackMain
 	integer:: m, n, endResult
 	do m = 0, 3
