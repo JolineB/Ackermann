@@ -35,7 +35,10 @@ end time_it;
 procedure ackermann (m: in integer; n: in out integer) is
 begin
 push(m);
-while (stack_is_empty() not .true.) loop
+loop
+    if(stack_is_empty()) then
+        exit loop;
+    end if;
     pop(m);
     if m = 0 then
         n := n + 1;
