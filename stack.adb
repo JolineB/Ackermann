@@ -23,7 +23,7 @@ package body stack is
     --
     procedure push(x : in integer) is
     begin
-        if s.top = 50 then
+        if st.top = 50 then
             put_line("stack is full");
         else
             st.top := st.top + 1;
@@ -33,7 +33,7 @@ package body stack is
     --
     procedure pop(x : out integer) is
     begin
-        if s.top = 0 then
+        if st.top = 0 then
             put_line("Stack is empty");
         else
             x := st.item(st.top);
@@ -50,7 +50,7 @@ package body stack is
     begin
         if st.top = 0 then
             put_line("Stack is empty");
-            return ' ';
+            return 0;
         else
             return st.item(st.top);
         end if;
