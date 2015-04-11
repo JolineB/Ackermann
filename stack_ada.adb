@@ -36,8 +36,8 @@ procedure ackermann (m: in integer; n: in out integer) is
 begin
 push(m);
 loop
-    if(stack_is_empty()) then
-        exit loop;
+    if(stack_is_empty() = .true.) then
+        exit;
     end if;
     pop(m);
     if m = 0 then
