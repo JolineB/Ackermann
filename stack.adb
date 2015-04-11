@@ -9,7 +9,7 @@
 with Ada.Text_IO; use Ada.Text_IO;
 with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
 with Ada.Float_Text_IO; use Ada.Float_Text_IO;
-with ada.numerics.elementary_funtcions; use ada.numerics.elementary_funtcions;
+with ada.numerics.elementary_functions; use ada.numerics.elementary_functions;
 with Ada.Text_IO; use Ada.Text_IO;
 
 package body stack is
