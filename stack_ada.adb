@@ -41,7 +41,8 @@ loop
     if(check) then
         exit;
     end if;
-    m := pop();
+    op := m;
+    m := pop(op);
     if m = 0 then
         n := n + 1;
     elsif n = 0 then
