@@ -52,7 +52,7 @@ loop
     end if;
 end loop;
 end ackermann;
-ackermann_Access : Proc_Access := ackermann'access;
+--ackermann_Access : Proc_Access := ackermann'access;
 --
 begin
     put_line("Enter m and n");
@@ -60,7 +60,7 @@ begin
     get(n);
     r := ackermann(m,n);
     put_line("Result: " & r);
-    put_line(Duration'Image(time_it(ackermann_Access,m,n)) & "miliseconds");
+    --put_line(Duration'Image(time_it(ackermann_Access,m,n)) & "miliseconds");
 --need to put in the time tracker
 end stack_ada;
 
