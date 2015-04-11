@@ -34,13 +34,14 @@ numStack : stack;
 -- end time_it;
 procedure ackermann (m: in integer; n: in out integer) is
 check: Boolean:= stack_is_empty;
+op : integer;
 begin
 push(m);
 loop
     if(check) then
         exit;
     end if;
-    pop(&m);
+    pop(op);
     if m = 0 then
         n := n + 1;
     elsif n = 0 then
