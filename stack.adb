@@ -18,7 +18,7 @@ package body stack is
 		record
 			item : stackArray; --array of 50 integers
 			top : integer := 0; --Always the top of the stack
-		end record
+		end record;
     st : q_stack;
     --
     procedure push(x : in integer) is
@@ -26,7 +26,7 @@ package body stack is
         if s.top = 50 then
             put_line("stack is full");
         else
-            st.top = st.top + 1;
+            st.top := st.top + 1;
             st.item(st.top) := x;
         end if;
     end push;
@@ -37,7 +37,7 @@ package body stack is
             put_line("Stack is empty");
         else
             x := st.item(st.top);
-            st.top = st.top -1;
+            st.top := st.top -1;
         end if;
     end pop;
     --
@@ -60,4 +60,5 @@ package body stack is
     begin
         st.top := 0;
     end reset_stack;
+end stack;
     
