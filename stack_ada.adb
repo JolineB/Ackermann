@@ -46,13 +46,14 @@ loop
         op2:= op2 + 1;
     elsif op2 = 0 then
         op2 := 1;
-        push (op-1);
+        push (op - 1);
     else
         op2 := op2 - 1;
         push(op-1);
         push(op);
     end if;
 end loop;
+return n;
 end ackermann;
 --ackermann_Access : Proc_Access := ackermann'access;
 --
