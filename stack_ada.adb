@@ -18,7 +18,7 @@ procedure stack_ada is
 -- start: Time;
 -- finish: Time;
 -- func_arg: integer:= Arg;
-r : integer;
+--r : integer;
 m : integer;
 n : integer;
 --
