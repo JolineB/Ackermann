@@ -34,7 +34,7 @@ n : integer;
 procedure ackermann (m: in integer; n: in out integer) is
 check: Boolean:= stack_is_empty;
 op : integer:= m;
-op2 :integer:= n;
+n :integer:= n;
 begin
 push(op);
 loop
@@ -43,17 +43,16 @@ loop
     end if;
     pop(op);
     if op = 0 then
-        op2:= op2 + 1;
-    elsif op2 = 0 then
-        op2 := 1;
+        n:= n + 1;
+    elsif n = 0 then
+        n := 1;
         push (op - 1);
     else
-        op2 := op2 - 1;
+        n := n - 1;
         push(op-1);
         push(op);
     end if;
 end loop;
-return n;
 end ackermann;
 --ackermann_Access : Proc_Access := ackermann'access;
 --
