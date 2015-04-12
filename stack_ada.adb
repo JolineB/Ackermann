@@ -18,7 +18,7 @@ procedure stack_ada is
 -- start: Time;
 -- finish: Time;
 -- func_arg: integer:= Arg;
---r : integer;
+r : integer;
 m : integer;
 n : integer;
 --
@@ -31,10 +31,10 @@ n : integer;
 --     finish := Clock;
 --     return finish - start;
 -- end time_it;
-procedure ackermann (m: in integer; n: in out integer) is
+procedure ackermann (m: in integer; n: in integer; r out integer) is
 check: Boolean:= stack_is_empty;
 op : integer:= m;
-op2 :integer:= n;
+r := n;
 begin
 push(op);
 loop
@@ -43,17 +43,17 @@ loop
     end if;
     pop(op);
     if op = 0 then
-        n:= n + 1;
-    elsif n = 0 then
-        n := 1;
+        r:= r + 1;
+    elsif r = 0 then
+        r:= 1;
         push (op - 1);
     else
-        n := n - 1;
+        r := r - 1;
         push(op-1);
         push(op);
     end if;
 end loop;
-put(n);
+put(r);
 new_line;
 end ackermann;
 --ackermann_Access : Proc_Access := ackermann'access;
@@ -64,7 +64,7 @@ begin
     get(n);
     ackermann(m,n);
     put_line("Result: ");
-    put(n);
+    put(r);
     new_line;
     --put_line(Duration'Image(time_it(ackermann_Access,m,n)) & "miliseconds");
 --need to put in the time tracker
