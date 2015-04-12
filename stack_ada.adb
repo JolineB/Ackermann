@@ -31,16 +31,16 @@ n : integer;
 --     finish := Clock;
 --     return finish - start;
 -- end time_it;
-procedure ackermann (m: in integer; n: in integer; r out integer) is
+procedure ackermann (m: in integer; n: in integer; r: out integer) is
 check: Boolean:= stack_is_empty;
 op : integer:= m;
-r := n;
 begin
 push(op);
 loop
     if(check) then
         exit;
     end if;
+    r := n;
     pop(op);
     if op = 0 then
         r:= r + 1;
