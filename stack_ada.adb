@@ -32,7 +32,7 @@ n : integer;
 --     return finish - start;
 -- end time_it;
 procedure ackermann (m: in integer; n: in integer; r: out integer) is
-check: Boolean;
+check: Boolean:= stack_is_empty;
 op : integer:= m;
 begin
 push(op);
