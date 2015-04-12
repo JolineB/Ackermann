@@ -31,13 +31,23 @@ n : integer;
 --     finish := Clock;
 --     return finish - start;
 -- end time_it;
+function Ackermann (M, N: Natural) return Natural is
+    begin
+        if M = 0 then
+            return N + 1;
+        elsif N = 0 then
+            return Ackermann (M - 1, 1);
+        else 
+            return Ackermann (M - 1, Ackermann(M, N-1));
+        end if;
+    end Ackermann;
 procedure ackermann (m: in integer; n: in integer; r: out integer) is
 check: Boolean:= stack_is_empty;
 op : integer:= m;
 begin
 push(op);
 loop
-   -- check := stack_is_empty;
+    check := stack_is_empty;
     if(check) then
         exit;
     end if;

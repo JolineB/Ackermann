@@ -25,11 +25,9 @@ package body stack is
     begin
         if st.top = 100 then
             put_line("stack is full");
-            put(st.top);
             new_line;
         else
             st.top := st.top + 1;
-            put(st.top);
             new_line;
             st.item(st.top) := x;
         end if;
