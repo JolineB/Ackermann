@@ -16,7 +16,7 @@ package body stack is
 	type stackArray is array(1 .. 1000000) of integer;
 	type q_stack is
 		record
-			item : stackArray; --array of 50 integers
+			item : stackArray; --array of 1000000 integers
 			top : integer := 0; --Always the top of the stack
 		end record;
     st : q_stack;
@@ -25,6 +25,8 @@ package body stack is
     begin
         if st.top = 1000000 then
             put_line("stack is full");
+            put(st.top);
+            new_line;
         else
             st.top := st.top + 1;
             st.item(st.top) := x;

@@ -37,7 +37,6 @@ op : integer:= m;
 begin
 push(op);
 loop
-    check := stack_is_empty;
     if(check) then
         exit;
     end if;
