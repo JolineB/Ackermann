@@ -42,7 +42,7 @@ loop
         exit;
     end if;
     r := n;
-    op = pop;
+    op := pop;
     if op = 0 then
         r:= r + 1;
     elsif r = 0 then
