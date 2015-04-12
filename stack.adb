@@ -29,6 +29,8 @@ package body stack is
             new_line;
         else
             st.top := st.top + 1;
+            put(st.top);
+            new_line;
             st.item(st.top) := x;
         end if;
     end push;
