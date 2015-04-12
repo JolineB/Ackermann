@@ -34,7 +34,7 @@ n : integer;
 function Ackermann (M, N: Natural) return Natural is
     begin
     push(M);
-    while stack_is_empty not in .true. loop
+    while stack_is_empty is not .true. loop
         pop(M);
         if M = 0 then
             N:= N + 1;
