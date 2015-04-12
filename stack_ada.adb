@@ -37,7 +37,7 @@ op : integer:= m;
 begin
 push(op);
 loop
-    check := stack_is_empty;
+   -- check := stack_is_empty;
     if(check) then
         exit;
     end if;
@@ -65,7 +65,7 @@ begin
     get(n);
     ackermann(m,n, r);
     put_line("Result: ");
-    put(r);
+    put(Natural'Image (r));
     new_line;
     --put_line(Duration'Image(time_it(ackermann_Access,m,n)) & "miliseconds");
 --need to put in the time tracker
