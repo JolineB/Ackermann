@@ -13,7 +13,7 @@ with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
 with Ada.Calendar; use Ada.Calendar;
 with stack; use stack;
 
-procedure stack_ada is
+procedure stack2 is
 -- type Proc_Access is access procedure(X:in out integer);
 -- start: Time;
 -- finish: Time;
@@ -31,16 +31,24 @@ n : integer;
 --     finish := Clock;
 --     return finish - start;
 -- end time_it;
--- function Ackermann (M, N: Natural) return Natural is
---     begin
---         if M = 0 then
---             return N + 1;
---         elsif N = 0 then
---             return Ackermann (M - 1, 1);
---         else 
---             return Ackermann (M - 1, Ackermann(M, N-1));
---         end if;
---     end Ackermann;
+function Ackermann (M, N: Natural) return Natural is
+    begin
+    push(M);
+    while stack_is_empty not .true. loop
+        pop(M);
+        if M = 0 then
+            N:= N + 1;
+        elsif N = 0 then
+            N := 1;
+            push(M - 1);
+        else 
+            N := N - 1;
+            push(M - 1);
+            push(M);
+        end if;
+    end loop;
+        
+    end Ackermann;
 procedure ackermann (m: in integer; n: in integer; r: out integer) is
 check: Boolean:= stack_is_empty;
 op : integer:= m;
@@ -73,11 +81,13 @@ begin
     put_line("Enter m and n");
     get(m);
     get(n);
-    ackermann(m,n, r);
+    Ackermann(m,n);
+    --ackermann(m,n, r);
     put_line("Result: ");
-    put(Natural'Image (r));
+    --put(Natural'Image (r));
+    put(Natural'Image (n));
     new_line;
     --put_line(Duration'Image(time_it(ackermann_Access,m,n)) & "miliseconds");
 --need to put in the time tracker
-end stack_ada;
+end stack2;
 
