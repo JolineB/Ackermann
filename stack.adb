@@ -33,7 +33,7 @@ package body stack is
         end if;
     end push;
     --
-    procedure pop(x : in out integer) is
+    procedure pop(x : out integer) is
     begin
         if st.top = 0 then
             put_line("Stack is empty");
