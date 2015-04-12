@@ -53,6 +53,8 @@ loop
         push(op);
     end if;
 end loop;
+put(n);
+new_line;
 end ackermann;
 --ackermann_Access : Proc_Access := ackermann'access;
 --
