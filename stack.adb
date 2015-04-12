@@ -13,7 +13,7 @@ with ada.numerics.elementary_functions; use ada.numerics.elementary_functions;
 with Ada.Text_IO; use Ada.Text_IO;
 
 package body stack is
-	type stackArray is array(1 .. 50) of integer;
+	type stackArray is array(1 .. 1000000) of integer;
 	type q_stack is
 		record
 			item : stackArray; --array of 50 integers
@@ -23,7 +23,7 @@ package body stack is
     --
     procedure push(x : in integer) is
     begin
-        if st.top = 50 then
+        if st.top = 1000000 then
             put_line("stack is full");
         else
             st.top := st.top + 1;
