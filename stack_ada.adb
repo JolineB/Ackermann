@@ -62,7 +62,7 @@ begin
     put_line("Enter m and n");
     get(m);
     get(n);
-    ackermann(m,n);
+    ackermann(m,n, r);
     put_line("Result: ");
     put(r);
     new_line;
