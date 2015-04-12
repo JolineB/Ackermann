@@ -34,7 +34,7 @@ n : integer;
 procedure ackermann (m: in integer; n: in out integer) is
 check: Boolean:= stack_is_empty;
 op : integer:= m;
-n :integer:= n;
+op2 :integer:= n;
 begin
 push(op);
 loop
