@@ -41,6 +41,8 @@ loop
         exit;
     end if;
     r := n;
+    put(r);
+    new_line;
     pop(op);
     if op = 0 then
         r:= r + 1;
