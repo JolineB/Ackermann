@@ -1,0 +1,32 @@
+---------------------README--------------------------
+The Ackermann Function in Ada, c, Cobol, Fortran
+
+---------------------Ada------------------------
+program is done in both using recursion and iteration.
+
+the iterative verison is called stack_ada.adb and uses external
+functions from stack.adb which needs to be compiled before the main
+program. compiled using gnatmake and is run by typing ./stack_ada
+
+the recursive verion is called Recu_Ada.adb
+It is compiled using gnatmake and takes user input 
+and is run by entering ./Recu_Ada
+---------------------C------------------------
+program is done in both using recursion and iteration.
+
+the iterative version is called stack_c.c 
+compiled using gcc -ansi -wall stack_c
+takes user input
+
+the iterative version is called stack_c.c 
+compiled using gcc -ansi -wall stack_c
+---------------------Cobol------------------------
+
+					NOTHING
+
+---------------------Fortran------------------------
+program is done using recursion
+
+the recursive version of this is compiled with gfortran
+
+the iterative version is incomplete
